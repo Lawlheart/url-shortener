@@ -31,9 +31,9 @@ function Shortener() {
       if(err) {
         res.json(err)
       } else {
-        if(validator.isURL(data.link)) {
+        try {
           res.redirect(data.link)
-        } else {
+        } catch(TypeError) {
           res.json({error: "bad data"})
         }
         
