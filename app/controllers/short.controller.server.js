@@ -5,13 +5,24 @@ var validator = require('validator');
 
 function Shortener() {
   this.make = function(req, res) {
+    var query = "";
+    if(req.query) {
+      query = "?";
+      for(var key in req.query) {
+        query += key + "=" + req.query[key] + "&";
+      }
+    }
     if(!validator.isURL(req.params[0])) {
       res.json({error: "URL invalid"});
       return;
     }
     Url.count({}, function(err, data) {
+      if(err) {
+        console.log(err);
+        return;
+      }
       var newUrl = new Url({
-        link: req.params[0],
+        link: req.params[0] + query,
         ref: data
       });
       newUrl.save(function(err, data) {
@@ -31,11 +42,11 @@ function Shortener() {
       if(err) {
         res.json(err)
       } else {
-        try {
+        // try {
           res.redirect(data.link)
-        } catch(TypeError) {
-          res.json({error: "bad data"})
-        }
+        // } catch(TypeError) {
+        //   res.json({error: "bad data"})
+        // }
         
       }
     })
