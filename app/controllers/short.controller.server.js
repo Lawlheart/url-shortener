@@ -19,18 +19,19 @@ function Shortener() {
           res.json(err);
         } else {
           res.json({
-            'original_url': data.link,
-            'shortened_url': "http://st-lb.herokuapp.com/" + data.ref
+            'original_url': newUrl.link,
+            'shortened_url': "http://st-lb.herokuapp.com/" + newUrl.ref
           });
         }
       });
     });
   };
   this.get = function(req, res) {
-    Url.where({ ref: req.params.id}).findOne(function(err, data) {
+    Url.where({ ref: req.params.id }).findOne(function(err, data) {
       if(err) {
         res.json(err)
       } else {
+        console.log(data);
         if(validator.isURL(data.link)) {
           res.redirect(data.link)
         } else {
