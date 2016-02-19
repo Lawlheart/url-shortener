@@ -1,26 +1,24 @@
-/********* Fonts **********/
-
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url('../fonts/Roboto-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  src: local('Roboto Medium'), local('Roboto-Medium'), url('../fonts/Roboto-Medium.ttf') format('truetype');
-}
-
-/****** Main Styling ******/
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
 
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 	margin: 0;
 	padding: 0;
+}
+
+ul li {
+	list-style: none;
+}
+
+code {
+	font-family: monospace;
+	background-color: #222;
+	color: #00BCD4;
+	padding: 6px;
+	margin: 2px;
+	border-radius: 2px;
+  line-height: 35px;
 }
 
 header {
@@ -30,38 +28,17 @@ header {
 	text-align: center;
 }
 
-p {
-	margin: 8px 0 0 0;
-}
 
-.container p {
-	text-align: center;
-	padding: 0;
+.container {
+	max-width: 1000px;
+	margin: 20px auto;
+	min-height: 400px;
 }
 
 /****** Header Styling ******/
 
 header p {
 	margin: 16px 0 5px 0;
-}
-
-.menu {
-	text-decoration: none;
-	padding: 6px;
-	margin: 0;
-	color: #727272;
-}
-
-.menu:visited {
-	color: #727272;
-}
-
-.menu:hover {
-	color: #FFA000;
-}
-
-.menu:active {
-	color: #FF630D;
 }
 
 header a ~ p {
@@ -71,134 +48,38 @@ header a ~ p {
 	color: #ECEFF1;
 }
 
-#display-name {
-	font-weight: 400;
-}
-
-/****** Login Styling ******/
-
-.login {
-	margin: 86px auto 0 auto;
-	text-align: center;
-}
-
-#login-btn {
-	width: 225px;
-	padding: 7px 5px;
-}
-
-.btn p {
-	margin: 8px 0 0 0;
-	padding: 0;
-}
-
-.btn > img {
-	float: left;
-	margin-left: 10px
-}
 
 /****** Logo Div Styling ******/
 
 img {
 	margin: 0 auto;
-	display: block;
-}
-
-.clementine-text { /* Styling for the Clementine.js text */
-	padding: 0;
-	margin: -25px 0 0 0;
-	font-weight: 500;
-	font-size: 60px;
-	color: #FFA000;
-}
-
-/****** Click Styling ******/
-
-.btn-container {	/* Styling for the div that contains the buttons */
-	margin: -10px auto 0 auto;
-	text-align: center;
-}
-
-.btn {	/* Styling for buttons */
-	margin: 0 8px;
-	color: white;
-	background-color: #00BCD4;
+	height: 20px;
 	display: inline-block;
-	border: 0;
-	font-size: 14px;
-	border-radius: 3px;
-	padding: 10px 5px;
-	width: 100px;
-	font-weight: 500;
 }
 
-.btn:focus {	/* Remove outline when hovering over button */
-	outline: none;
-}
-
-.btn:active {	/* Scale the button down by 10% when clicking on button */
-	transform: scale(0.9, 0.9);
-	-webkit-transform: scale(0.9, 0.9);
-	-moz-transform: scale(0.9, 0.9);
-}
-
-.btn-delete {	/* Styling for delete button */
-	background-color: #ECEFF1;
-	color: #212121;
-}
-
-#click-nbr {
-	font-weight: 400;
-}
-
-/****** Profile Styling ******/
-
-.github-profile {
-	width: 350px;
-	height: 200px;
-	border-radius: 3px;
-	margin: 86px auto 0 auto;
-	background-color: #EEE;
+footer {
+	margin: 20px auto o;
 	text-align: center;
-	color: #000;
 }
 
-.github-profile p:first-child {
-	padding-top: 16px;
-}
-
-.github-profile p:nth-child(5) {
-	margin-bottom: 16px
-}
-
-.github-profile p {
-	margin: 0 0 0 16px;
-	text-align: left;
-}
-
-.profile-value {
-	font-weight: 400;
-}
-
-span {
-	font-weight: 500;
-}
-
-.github-profile > img {
-	padding-top: 16px;
-	margin-bottom: 16px;
-}
-
-.github-profile .menu:hover {
-	color: #FFA000;
-}
-
-.github-profile .menu:active {
-	color: #FF630D;
-}
-
-#menu-divide {
-	color: #FFFFFF;
-	display: inline;
+.sig-text {
 	margin: 0;
+	padding: 0;
+	color: #00BCD4;
 }
+
+.sig-text a, .sig-text a:visited, .sig-text a:hover {
+	text-decoration: none;
+	font-weight: bold;
+	color: #00BCD4;
+}
+
+.clementine-text {
+	padding: 0;
+	margin: 0;
+	font-weight: 500;
+	font-size: 20px;
+	color: #FFA000;
+	display: inline-block;
+}
+
