@@ -31,7 +31,6 @@ function Shortener() {
       if(err) {
         res.json(err)
       } else {
-        console.log(data);
         if(validator.isURL(data.link)) {
           res.redirect(data.link)
         } else {
