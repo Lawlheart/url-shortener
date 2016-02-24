@@ -40,17 +40,11 @@ function Shortener() {
   this.get = function(req, res) {
     Url.where({ ref: req.params.id }).findOne(function(err, data) {
       if(err) {
-        res.json(err)
+        res.json(err);
       } else {
-        // try {
-          res.redirect(data.link)
-        // } catch(TypeError) {
-        //   res.json({error: "bad data"})
-        // }
-        
+        res.redirect(data.link);
       }
-    })
-    
+    });
   };
 };
 
